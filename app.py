@@ -111,10 +111,11 @@ class ExchangeAPIHandler(SyncBaseHandler):
         ex = self.get_exchange(exchange)
 
         if len(self.request.body) > 0:
-            request = json.loads(self.request.body)
+            request = json.loads(self.request.body.decode('utf-8'))
         else:
             request = {}
         func = getattr(ex, method)
+        print(request)
         result = func(**request)
 
         self.write(json.dumps(result))
@@ -174,4 +175,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
