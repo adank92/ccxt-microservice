@@ -1,6 +1,6 @@
 import asyncio
 import ccxt
-import ccxt.async
+import ccxt.async_support as ccxt
 import json
 import tornado.httpserver
 import tornado.ioloop
