@@ -116,7 +116,7 @@ class ExchangeAPIHandler(SyncBaseHandler):
             request = {}
         func = getattr(ex, method)
         print(request)
-        result = func(**request)
+        result = func(*request)
 
         self.write(json.dumps(result))
 
